@@ -44,12 +44,13 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
+    
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         RefreshUIReferences();
         UpdateUI();
     }
+
 
     private void Start()
     {
@@ -60,16 +61,16 @@ public class GameManager : MonoBehaviour
 
     private void RefreshUIReferences()
     {
-        if (scoreText == null)
+        
             scoreText = GameObject.Find("ScoreText")?.GetComponent<TextMeshPro>();
-        if (livesText == null)
+       
             livesText = GameObject.Find("LivesText")?.GetComponent<TextMeshPro>();
-        if (enemiesKilledText == null)
-            enemiesKilledText = GameObject.Find("EnemiesText")?.GetComponent<TextMeshPro>();
-        if (gameOverPanel == null)
+       
+            enemiesKilledText = GameObject.Find("EnemiesKilled")?.GetComponent<TextMeshPro>();
+        if(gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
-            gameOverPanel = GameObject.Find("GameOverPanel");
+            gameOverPanel = GameObject.Find("GameEndPanel");
         }
     }
     public void AddScore(int points)
