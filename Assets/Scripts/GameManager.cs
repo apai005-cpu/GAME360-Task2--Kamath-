@@ -44,13 +44,12 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         RefreshUIReferences();
         UpdateUI();
     }
-
 
     private void Start()
     {
@@ -61,16 +60,16 @@ public class GameManager : MonoBehaviour
 
     private void RefreshUIReferences()
     {
-        
+        if (scoreText == null)
             scoreText = GameObject.Find("ScoreText")?.GetComponent<TextMeshPro>();
-       
+        if (livesText == null)
             livesText = GameObject.Find("LivesText")?.GetComponent<TextMeshPro>();
-       
-            enemiesKilledText = GameObject.Find("EnemiesKilled")?.GetComponent<TextMeshPro>();
-        if(gameOverPanel != null)
+        if (enemiesKilledText == null)
+            enemiesKilledText = GameObject.Find("EnemiesText")?.GetComponent<TextMeshPro>();
+        if (gameOverPanel == null)
         {
             gameOverPanel.SetActive(false);
-            gameOverPanel = GameObject.Find("GameEndPanel");
+            gameOverPanel = GameObject.Find("GameOverPanel");
         }
     }
     public void AddScore(int points)
@@ -78,14 +77,14 @@ public class GameManager : MonoBehaviour
         score += points;
         Debug.Log($"Score increased by {points}. Total: {score}");
         UpdateUI();
-     }
+    }
 
-    
+
     public void LoseLife()
     {
         lives--;
         Debug.Log($"Life lost! Lives remaining: {lives}");
-       
+
         UpdateUI();
 
         if (lives <= 0)
