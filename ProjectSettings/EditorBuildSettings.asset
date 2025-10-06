@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 829286c3ab48e134ab0e685f70df86e8
   - enabled: 1
-    path: Assets/Scenes/Scene2 Singleton.unity
-    guid: 2cf2297729c15194caaaed3f5651a2ec
+    path: Assets/Scenes/2DGame.unity
+    guid: ff32fa6c50648ba41b3b4f433d1b9f0d
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: e8878ef55c486c64883c9c7d673684b0
+  - enabled: 1
+    path: Assets/Scenes/Scene2 Singleton.unity
+    guid: 2cf2297729c15194caaaed3f5651a2ec
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
