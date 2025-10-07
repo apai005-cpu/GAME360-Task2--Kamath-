@@ -77,14 +77,14 @@ public class GameManager : MonoBehaviour
         score += points;
         Debug.Log($"Score increased by {points}. Total: {score}");
         UpdateUI();
-     }
+    }
 
-    
+
     public void LoseLife()
     {
         lives--;
         Debug.Log($"Life lost! Lives remaining: {lives}");
-       
+
         UpdateUI();
 
         if (lives <= 0)
@@ -152,10 +152,10 @@ public class GameManager : MonoBehaviour
         enemiesKilled = 0;
 
         // Hide game over panel
-        if (gameOverPanel) gameOverPanel.SetActive(false);
+      //  if (gameOverPanel) gameOverPanel.SetActive(false);
 
         // Destroy all enemies, bullets, and collectibles before reloading
-        DestroyAllGameObjects();
+      //  DestroyAllGameObjects();
 
         // Reload the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

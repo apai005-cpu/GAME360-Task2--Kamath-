@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
@@ -22,3 +23,5 @@ public class Collectible : MonoBehaviour
         }
     }
 }
+
+
